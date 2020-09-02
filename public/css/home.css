@@ -1,0 +1,16 @@
+.hold{
+    display: inline-block;
+    background-color: #e11d74;
+   margin: 10% 20%;
+   justify-content: center;
+    width: 50%;
+    border-radius: 50px;
+    
+}
+.case{
+    display: inline-block;
+    margin: 5%;
+    background-color: aliceblue;
+    padding: 0.75rem;
+    border-radius: 10px;
+}
