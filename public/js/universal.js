@@ -15,6 +15,8 @@ async function getData() {
     deaths: apidata.Global.TotalDeaths,
     confirmed: apidata.Global.TotalConfirmed,
     recover: apidata.Global.TotalRecovered,
+    active:apidata.Global.NewConfirmed
+
   };
 }
 async function getTable() {}

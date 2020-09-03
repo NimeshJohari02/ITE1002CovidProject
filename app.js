@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
       deaths: cr.deaths,
       confirmed: cr.confirmed,
       recover: cr.recover,
+      active:cr.active
     });
   });
 });
