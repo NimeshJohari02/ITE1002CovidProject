@@ -48,12 +48,14 @@
     </div>
   </form>
 </div>
-<% for( let i = 0; i < distName.length; i++ ) { %>
-<tr>
-  <td><%=distName[i]%></td>
-  <td class="text-danger">Active : <%= distCasesArr[i].active%></td>
-  <td>Confirmed : <%= distCasesArr[i].confirmed %></td>
-  <td>Deceased : <%= distCasesArr[i].deceased %></td>
-  <td class="text-success">Recovered : <%= distCasesArr[i].recovered %></td>
-</tr>
-<% } %>
+<table>
+  <% for( let i = 0; i < distName.length; i++ ) { %>
+  <tr>
+    <td><%=distName[i]%></td>
+    <td class="text-danger">Active : <%= distCasesArr[i].active%></td>
+    <td>Confirmed : <%= distCasesArr[i].confirmed %></td>
+    <td>Deceased : <%= distCasesArr[i].deceased %></td>
+    <td class="text-success">Recovered : <%= distCasesArr[i].recovered %></td>
+  </tr>
+  <% } %>
+</table>
