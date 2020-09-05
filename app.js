@@ -17,8 +17,25 @@ app.get("/", (req, res) => {
       deaths: cr.deaths,
       confirmed: cr.confirmed,
       recover: cr.recover,
-      active:cr.active
+      active: cr.active,
     });
+  });
+});
+
+let obj = {};
+
+app.get("/table", (req, res) => {
+  res.render("table", { distName: [], distCasesArr: [] });
+});
+
+app.post("/table", (req, res) => {
+  const selectedState = req.body.state;
+  console.log(selectedState);
+  utils.getTable().then((dt) => {
+    let state = dt[`${selectedState}`];
+    let distName = Object.keys(state.districtData);
+    let distCasesArr = Object.values(state.districtData);
+    res.render("table", { distName: distName, distCasesArr: distCasesArr });
   });
 });
 

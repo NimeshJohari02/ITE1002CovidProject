@@ -15,11 +15,16 @@ async function getData() {
     deaths: apidata.Global.TotalDeaths,
     confirmed: apidata.Global.TotalConfirmed,
     recover: apidata.Global.TotalRecovered,
-    active:apidata.Global.NewConfirmed
-
+    active: apidata.Global.NewConfirmed,
   };
 }
-async function getTable() {}
+async function getTable() {
+  const apidata = await (
+    await fetch("https://api.covid19india.org/state_district_wise.json")
+  ).json();
+  return { ...apidata };
+}
 module.exports = {
   getData: getData,
+  getTable: getTable,
 };
