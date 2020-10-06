@@ -1,0 +1,16 @@
+
+
+.main-section {
+   
+    border: 0px solid white;
+    border-radius: 50px;
+    max-width: 92%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 95px;
+    background-color: white;
+    padding-left: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
