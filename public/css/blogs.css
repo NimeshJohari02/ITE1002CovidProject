@@ -6,6 +6,7 @@ display: flex;
 
 padding-top: 40px;
 padding-left: 100px;
+max-width: 95%;
 }
 .blog-heading{
     max-width: 30%;

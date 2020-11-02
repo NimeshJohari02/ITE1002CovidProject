@@ -35,7 +35,8 @@ app.post("/connect",async (req,res)=>{
   }
   const user=new User(newUser); 
   await user.save();
-  res.send("Your query has been submitted successfully!");
+  // res.send("Your query has been submitted successfully!");
+  res.render("submit");
 })
 
 app.get("/blogs",async (req,res)=>{
