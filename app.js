@@ -1,12 +1,13 @@
 const express = require("express");
+
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-const _ = require("lodash");
-const mongoose = require("mongoose");
+const User=require("./user");
+const Blog=require("./blogs")
 const fetch = require("node-fetch");
 const utils = require("./public/js/universal");
 const app = express();
-
+require("./mongoose");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -21,6 +22,27 @@ app.get("/", (req, res) => {
     });
   });
 });
+
+app.get("/connect",async (req,res)=>{
+  res.render("form");
+})
+
+app.post("/connect",async (req,res)=>{
+  const newUser={
+    name:req.body.name,
+    email:req.body.email,
+    message:req.body.message,
+  }
+  const user=new User(newUser); 
+  await user.save();
+  res.send("Your query has been submitted successfully!");
+})
+
+app.get("/blogs",async (req,res)=>{
+  const allBlogs=await Blog.find({});
+  console.log(allBlogs);
+  res.render("blog",{data:allBlogs})
+})
 
 let obj = {};
 
